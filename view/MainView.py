@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 
 from controller.EvalController import EvaluadorController
 from view.AboutPartial import consultar_instrucciones
-from view.EvalPartial import listar_evaluacion, agregar_evaluacion
+from view.EvalPartial import listar_evaluacion, agregar_evaluacion, listar_usuarios
 from view.PruebaPartial import probar_streamlit
 
 
@@ -32,24 +32,30 @@ class MainView:
         st.set_page_config(page_title="Análisis mercado energía", page_icon='', layout="wide",
                            initial_sidebar_state="expanded")
         # Defines the number of available columns del area principal
-        self.col1, self.col2, self.col3 = st.columns([1, 1, 1])
+        self.col1, self.col2, self.col3, self.col4 = st.columns([1, 1, 1, 1])
 
         # Define lo que abrá en la barra de menu
         with st.sidebar:
-            self.menu_actual = option_menu("Menu", ["About", 'PruebaStreamlit', 'EvaluarAvances', 'ListarEvaluaciones'],
+            self.menu_actual = option_menu("Menu", ["About",
+                                                    'Prueba Streamlit',
+                                                    'Evaluar Avances',
+                                                    'ListarEvaluaciones',
+                                                    'Listar Usuarios'],
                                            icons=['house', 'gear'], menu_icon="cast", default_index=1)
 
     def controlar_menu(self):
         """TODO poner aqui su codigo de interaccion"""
         if self.menu_actual == "About":
-            texto = consultar_instrucciones()
+            texto = consultar_instrucciones(st)
             st.write(texto)
-        elif self.menu_actual == "PruebaStreamlit":
+        elif self.menu_actual == "Prueba Streamlit":
             probar_streamlit(st)
-        elif self.menu_actual == "EvaluarAvances":
+        elif self.menu_actual == "Evaluar Avances":
             agregar_evaluacion(st, self.controller)
-        elif self.menu_actual == "ListarEvaluaciones":
+        elif self.menu_actual == "Listar Evaluaciones":
             listar_evaluacion(st, self.controller)
+        elif self.menu_actual == "Listar Usuarios":
+            listar_usuarios(st, self.controller)
 
 
 # Main call

@@ -25,7 +25,14 @@ def listar_evaluacion(st, controller):
     """Itera los elementos de evaluacion agregados y los muestra"""
     st.title("Datos guardados... a mejorar la presentacion")
     for evaluacion in controller.evaluaciones:
-        st.write(evaluacion.id_estudiante)
         st.write(evaluacion.nombre)
-        st.write(evaluacion.tema_proyecto)
-        st.write(evaluacion.version_doc)
+        st.write(evaluacion.id_estudiante)
+
+
+def listar_usuarios(st, controller):
+    """Itera los elementos de evaluacion agregados y los muestra"""
+    st.title("Estudiantes Almacenados")
+    for evaluacion in controller.evaluaciones:
+        st.write(evaluacion.nombre, evaluacion.id_estudiante)
+
+
