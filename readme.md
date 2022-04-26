@@ -2,6 +2,9 @@
 
 Evaluador de entregas parciales - anteproyecto
 
+Información introductoria disponible en: [Esta presentación](https://docs.google.com/presentation/d/1YZ56m2BQTawpqtSPkPywT94yGARn5N7J/edit?usp=sharing&ouid=112367552149011376006&rtpof=true&sd=true)
+
+Diagramas disponibles en draw.io en este [link](https://drive.google.com/file/d/15jLY0d9PIlFykmX-SicIs_8e5i72VUsF/view?usp=sharing): 
 ## Configuracion
 
 ### Instalación del archivo requirements.txt
