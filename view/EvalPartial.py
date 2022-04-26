@@ -10,7 +10,7 @@ def agregar_evaluacion(st, controller):
     evaluacion_obj.id_estudiante = st.text_input("Id estudiante")
     # TODO
     # Agregar campo para leer el tema y la versión de la evaluación del proyecto
-    enviado_btn = st.form_submit_button("Submit")
+    enviado_btn = st.button("Submit")
 
     # Cuando se oprime el boton se agrega a la lista
     if enviado_btn:
